@@ -7,15 +7,51 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>shoppingbackend Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  <!-- HELPS US TO USE THE LATEST JAVAEE API AND WE CAN CHANGE IT ACCORDING TO UPDATES -->
+  <properties>
+  <javaee.version>7.0</javaee.version>
+  <spring.version>4.3.10.RELEASE</spring.version>
+  </properties>
+  
+  
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+   <!-- JAVA EE -->
+	  
+		<dependency>
+		    <groupId>javax</groupId>
+		    <artifactId>javaee-api</artifactId>
+		    <version>${javaee.version}</version>
+		    <scope>provided</scope>
+		</dependency>
+		
+	    <dependency>
+		      <groupId>junit</groupId>
+		      <artifactId>junit</artifactId>
+		      <version>3.8.1</version>
+		      <scope>test</scope>
+	    </dependency>
+	    
+	    <!-- SPRING DEPENDENCY 4.3.10RELEASE -->
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-webmvc</artifactId>
+			    <version>${spring.version}</version>
+			</dependency>
   </dependencies>
   <build>
+  		<plugins>
+		  <!-- update to latest version of java -->
+			    <plugin>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <version>3.1</version>
+		        <configuration>
+		        	<source>1.8</source>
+		        	<target>1.8</target>
+		        </configuration>
+		        </plugin>
+		  </plugins>
+  
     <finalName>shoppingbackend</finalName>
   </build>
 </project>
